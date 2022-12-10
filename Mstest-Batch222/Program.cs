@@ -10,9 +10,9 @@ namespace Mstest_Batch222
     {
         public static void Main(string[] args)
         {
-            string message = "im in sad mood";
-            MoodAnalyser obj1 = new MoodAnalyser();
-            obj1.AnalyseMood(message);
+            string message = "I am in Any mood";
+            MoodAnalyser obj1 = new MoodAnalyser(message);
+            obj1.AnalyseMood();
             Console.ReadKey();
         }
     }

@@ -8,22 +8,31 @@ namespace Mstest_Batch222
 {
     public class MoodAnalyser
     {
-        public string AnalyseMood(string message)
+        public string message;
+        public MoodAnalyser(string message)
         {
-            if (message.Equals(string.Empty))
+            this.message = message;
+        }
+        public MoodAnalyser()
+        {
+           
+        }
+        public string AnalyseMood()
+        {
+            if (this.message.Equals(string.Empty))
             {
                 return "Mood should not be empty";
             }
-            if (message.ToLower().Contains("sad"))
+            if (this.message.ToLower().Contains("sad"))
             {
                 Console.WriteLine("sad");
-                return "sad";               
+                return "sad";
             }
             else
             {
                 Console.WriteLine("Happy");
                 return "Happy";
-            }     
+            }
         }
     }
 }
