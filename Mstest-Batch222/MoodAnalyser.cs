@@ -25,13 +25,13 @@ namespace Mstest_Batch222
             }
             if (this.message.ToLower().Contains("sad"))
             {
-                Console.WriteLine("sad");
-                return "sad";
+                Console.WriteLine("SAD");
+                return "SAD";
             }
             else
             {
-                Console.WriteLine("Happy");
-                return "Happy";
+                Console.WriteLine("HAPPY");
+                return "SAD";
             }
         }
     }
