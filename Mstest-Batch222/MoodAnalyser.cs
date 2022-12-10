@@ -15,24 +15,42 @@ namespace Mstest_Batch222
         }
         public MoodAnalyser()
         {
-           
+
         }
         public string AnalyseMood()
         {
-            if (this.message.Equals(string.Empty))
+            if (this.message != null)
             {
-                return "Mood should not be empty";
-            }
-            if (this.message.ToLower().Contains("sad"))
-            {
-                Console.WriteLine("SAD");
-                return "SAD";
+                if (this.message.Equals(string.Empty))
+                {
+                    return "Mood should not be empty";
+                }
+
+                if (this.message.ToLower().Contains("sad"))
+                {
+                    Console.WriteLine("SAD");
+                    return "SAD";
+                }
+                else
+                {
+                    Console.WriteLine("HAPPY");
+                    return "SAD";
+                }
             }
             else
             {
-                Console.WriteLine("HAPPY");
-                return "SAD";
+                try
+                {
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "input Mood should not be empty or null or invalid");                  
+                }
+                catch (MoodAnalyserCustomException ex)
+                {
+                    return ex.Message;
+                }
+
             }
+
+
         }
     }
 }
