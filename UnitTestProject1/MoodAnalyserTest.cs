@@ -6,13 +6,12 @@ namespace UnitTestProject1
 {
     [TestClass]
     public class MoodAnalyserTest
-    { 
-        //arrange  
+    {  //arrange  
+        [DataRow(null,"HAPPY")]
         [TestMethod]
-        [DataRow("I am in HAPPY Mood","SAD")]//input given
         public void GivenMessageShouldReturnSad(string messageinput,string expected)
-        {   
-           
+        {
+          
         }
     }
 }
