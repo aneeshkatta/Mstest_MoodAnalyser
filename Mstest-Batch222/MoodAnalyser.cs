@@ -23,7 +23,7 @@ namespace Mstest_Batch222
             {
                 return "Mood should not be empty";
             }
-            if (this.message.ToLower().Contains("sad"))
+            if (this.message.ToLower().Contains("happy"))
             {
                 Console.WriteLine("SAD");
                 return "SAD";
@@ -31,7 +31,7 @@ namespace Mstest_Batch222
             else
             {
                 Console.WriteLine("HAPPY");
-                return "SAD";
+                return "HAPPY";
             }
         }
     }
