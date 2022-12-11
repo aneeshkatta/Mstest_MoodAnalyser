@@ -12,7 +12,6 @@ namespace Mstest_Batch222
         {
             string message = null;
             MoodAnalyser obj1 = new MoodAnalyser(message);
-            obj1.AnalyseMood();
             Console.WriteLine(obj1.AnalyseMood());//returns output  value
             Console.ReadKey();
         }
