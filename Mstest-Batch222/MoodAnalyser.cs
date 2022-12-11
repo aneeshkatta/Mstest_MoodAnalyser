@@ -41,7 +41,7 @@ namespace Mstest_Batch222
             {
                 try
                 {
-                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "input Mood should not be empty or null or invalid");                  
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "Happy");                  
                 }
                 catch (MoodAnalyserCustomException ex)
                 {
