@@ -28,28 +28,28 @@ namespace Mstest_Batch222
 
                 if (this.message.ToLower().Contains("sad"))
                 {
-                    Console.WriteLine("SAD");
-                    return "SAD";
+                      return "SAD";
                 }
                 else
                 {
-                    Console.WriteLine("HAPPY");
-                    return "SAD";
+                      return "HAPPY";
                 }
             }
             else
             {
                 try
                 {
-                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "Happy");                  
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "Invalid mood Entered");                  
                 }
                 catch (MoodAnalyserCustomException ex)
                 {
                     return ex.Message;
                 }
+                finally
+                {
+                    Console.WriteLine("Exception is handled ! This Code is executed irrespective of Exception occured ");
+                }
             }
-
-
         }
     }
 }
