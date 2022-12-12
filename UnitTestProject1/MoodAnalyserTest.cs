@@ -6,9 +6,9 @@ namespace UnitTestProject1
 {
     [TestClass]
     public class MoodAnalyserTest
-    {   //Uc2-TestCase-2.1
+    {   
         //arrange  
-        [DataRow(null, "Happy")]
+        [DataRow(null, "Invalid mood Entered")]
         [TestMethod]
         public void GivenMessageShouldReturnSad(string messageinput, string expected)
         {
