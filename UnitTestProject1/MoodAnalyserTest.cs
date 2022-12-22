@@ -8,7 +8,7 @@ namespace UnitTestProject1
     public class MoodAnalyserTest
     {   
         //arrange  
-        [DataRow(null, "Invalid mood-null mood Entered")] 
+        [DataRow("", "Empty mood Entered-invalid mood")]
         [TestMethod]
         public void GivenMessageShouldReturnSad(string messageinput, string expected)
         {
