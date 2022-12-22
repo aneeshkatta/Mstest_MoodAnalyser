@@ -23,6 +23,14 @@ namespace Mstest_Batch222
             {
                 if (this.message.Equals(string.Empty))
                 {
+                    try
+                    {
+                        throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Empty_Message, "Empty mood Entered-invalid mood");
+                    }
+                    catch (MoodAnalyserCustomException ex)
+                    {
+                        return ex.Message;
+                    }                  
                     return "Mood should not be empty";
                 }
 
@@ -39,7 +47,7 @@ namespace Mstest_Batch222
             {
                 try
                 {
-                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "Invalid mood Entered");                  
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "Invalid mood-null mood Entered");                  
                 }
                 catch (MoodAnalyserCustomException ex)
                 {

@@ -8,7 +8,7 @@ namespace UnitTestProject1
     public class MoodAnalyserTest
     {   
         //arrange  
-        [DataRow(null, "Invalid mood Entered")]
+        [DataRow(null, "Invalid mood-null mood Entered")] 
         [TestMethod]
         public void GivenMessageShouldReturnSad(string messageinput, string expected)
         {
@@ -16,7 +16,7 @@ namespace UnitTestProject1
             //act
             string actual = obj.AnalyseMood();
             //assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(actual, expected);//checking whether exception message is coming in output of analyse mood method for null input 
         }
     }
 }
