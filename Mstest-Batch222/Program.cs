@@ -10,10 +10,7 @@ namespace Mstest_Batch222
     {
         public static void Main(string[] args)
         {
-            string message = null;
-            MoodAnalyser obj1 = new MoodAnalyser(message);
-            Console.WriteLine(obj1.AnalyseMood());//returns output  value
-            Console.ReadKey();
+            //for test case  
         }
     }
 }

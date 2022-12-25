@@ -8,7 +8,7 @@ namespace Mstest_Batch222
 {
     public class MoodAnalyser
     {
-        public string message;
+        private string message;
         public MoodAnalyser(string message)
         {
             this.message = message;
@@ -19,44 +19,25 @@ namespace Mstest_Batch222
         }
         public string AnalyseMood()
         {
-            if (this.message != null)
+            try
             {
-                if (this.message.Equals(string.Empty))
+                if (message.Equals(string.Empty))
                 {
-                    try
-                    {
-                        throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Empty_Message, "Empty mood Entered-invalid mood");
-                    }
-                    catch (MoodAnalyserCustomException ex)
-                    {
-                        return ex.Message;
-                    }                  
-                    return "Mood should not be empty";
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not be Empty");
                 }
-
-                if (this.message.ToLower().Contains("sad"))
+                if (message.ToLower().Contains("sad"))
                 {
-                      return "SAD";
+                    return "SAD";
                 }
                 else
                 {
-                      return "HAPPY";
+                    return "HAPPY";
                 }
             }
-            else
+            catch
             {
-                try
-                {
-                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_Message, "Invalid mood-null mood Entered");                  
-                }
-                catch (MoodAnalyserCustomException ex)
-                {
-                    return ex.Message;
-                }
-                finally
-                {
-                    Console.WriteLine("Exception is handled ! This Code is executed irrespective of Exception occured ");
-                }
+                return "HAPPY";
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood Should not be null");            //UC3 - TC 3.1
             }
         }
     }
